@@ -1,5 +1,5 @@
-console.log('Client side js is executed here')
 
+//cleint-side javascript
 
 const weatherForm = document.querySelector('form') // here you select the form element in index.html
 const search = document.querySelector('input')
