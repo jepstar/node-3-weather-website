@@ -1,0 +1,16 @@
+<DOCTYPE! html>
+<html>
+
+<head>
+    <title>about</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css"> <!--you can also give the path relative to where the actual document is. that would be ./css/styles.css  ./ means you go a step back from the actual document. We are then in public. Then you move to /css and after that to /styles.css. Its called a realtive path. However here we use the absolute path. The default folder to open documents from has been set to the public folder i app.js. So we can just write /css/styles.css-->
+</head>
+
+<body>
+    {{>header}} <!--here I use a dynamic partial element that can be use on several pages-->
+    <img class="imgDoor" src="/img/door-beauty.jpg">
+    {{>footer}}
+</body>
+
+</html>

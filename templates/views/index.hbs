@@ -1,0 +1,31 @@
+<DOCTYPE! html>
+<html>
+
+<head>
+    <title>weather</title>
+    <link rel="icon" href="/img/weather.png">  <!--skulle vise et icon i fanebladet. Ved ikke hvorfor det ikke virker-->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div class="main-content">
+        {{>header}} <!--here I use a dynamic partial element that can be use on several pages--> 
+        
+        <p>Use this site to get your weather</p>
+
+        <form>
+            <input placeholder="location" type="text">
+            <button>Search</button>
+        </form>
+
+        <p id='message-1'></p>
+        <p id='message-2'></p>
+        
+    </div>
+    {{>footer}}
+
+<script src="/js/app.js"></script> <!--you have to set the connection to the client side js down here instead of in the head because of not then it wont work-->
+</body>
+
+</html>
