@@ -1,9 +1,11 @@
 const path = require('path') // path is a core module. It means that the you do not have to install it through NPM. Noramlly you write the core modules firs like here. But you do not have to
 const express = require('express') // the express library is a single function as opposed to an object which most other libraries are. We call it to create a new express aplication. 
-const app = express() // a new variable to store our express aplication 
 const hbs = require('hbs') // you have to require hbs to use partials
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+
+const app = express() // a new variable to store our express aplication 
+const port = process.env.PORT || 3000 //I both use herokus port or || the local port 3000. This way I can both work locally and view the app online with Heroku
 
 console.log(__dirname) // prints the path to the directory name. Directory name har at gøre med hvilken mappe som er root directory for your project.
 console.log(path.join(__dirname, '../public')) // path.join er en funktion som sammensætter de forskellige dele af en path for os. vi skriver selv de forskellige dele som skal sammensættes til en path. dirname er den aktuelle mappe som dokumentet er i (src) De to .. går to skridt tilbage. Dvs i det her tilfælde til web-server. /public går ind i mappen public i web-server (hvis du ville gå to mapper op så skulle du skrive ../.. så ville du være i nymappe)
@@ -105,6 +107,6 @@ app.get('/products', (req, res) => {
  // app.com/about
  // app.com/weather
 
-app.listen(3000, () => { // i app listen funktionen indtaster jeg portnummer som det første argument, og (valgfrit) indtaster jeg en callback funktion som det andet argument - funktionen skrive her at serveren kører. beskeden kommer ikke frem i browseren til clienten men den kan bruges for at se at det virker bag scenen?
-    console.log('server is up on port 3000')
+app.listen(port, () => { // i app listen funktionen indtaster jeg portnummer som det første argument, og (valgfrit) indtaster jeg en callback funktion som det andet argument - funktionen skrive her at serveren kører. beskeden kommer ikke frem i browseren til clienten men den kan bruges for at se at det virker bag scenen?
+    console.log('server is up on port ' + port)
 })

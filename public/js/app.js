@@ -9,7 +9,7 @@ messageTwo = document.querySelector('#message-2')
 weatherForm.addEventListener('submit', (e) => { // I add an eventlistener to the form. When It is submitted, the callback function runs. Forms automatically refreshes after submitting the form - this is undesireable and we need to change that by adding the e-object and e.preventDefeault(). 
     e.preventDefault() 
     const location = search.value //here I create a new variable that extracts the value of the input field (search)
-    const url = 'http://localhost:3000/weather?address=' + location // here I concatonate a url to be used below with fetch
+    const url = '/weather?address=' + location // here I concatonate a url to be used below with fetch
 
     messageOne.textContent = 'loading' // here I can write a message which displays while the data is being fetched
     messageTwo.textContent = ''
